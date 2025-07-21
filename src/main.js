@@ -1,4 +1,5 @@
 import './style.css'
+import lottie from 'lottie-web'
 
 document.querySelector('#app').innerHTML = `
   <!-- Navigation -->
@@ -123,10 +124,7 @@ document.querySelector('#app').innerHTML = `
         </div>
       </div>
       <div class="tech-visual">
-        <div class="chip-mockup">
-          <div class="chip-core"></div>
-          <div class="chip-circuits"></div>
-        </div>
+        <div class="lottie-container" id="lottie-animation"></div>
       </div>
     </div>
   </section>
@@ -316,10 +314,25 @@ function addInteractiveEffects() {
   })
 }
 
+// Initialize Lottie animation
+function initLottieAnimation() {
+  const container = document.getElementById('lottie-animation')
+  if (container) {
+    lottie.loadAnimation({
+      container: container,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://lottie.host/c611b10d-9389-4fc0-94f2-5c1f1b06a713/fqf7AUwZCK.lottie'
+    })
+  }
+}
+
 // Initialize effects when DOM is loaded
 setTimeout(() => {
   createParticleEffect()
   addInteractiveEffects()
+  initLottieAnimation()
   
   // Initialize FinisherHeader for footer background
   new FinisherHeader({
