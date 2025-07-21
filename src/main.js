@@ -30,15 +30,19 @@ document.querySelector('#app').innerHTML = `
       </iframe>
     </div>
     <div class="hero-content">
-      <h1 class="hero-headline">MindWave AI</h1>
-      <p class="hero-subheadline">Your thoughts. Decoded.</p>
+      <div class="hero-badge">🧠 First 1,000 Pre-Orders Get 40% OFF</div>
+      <h1 class="hero-headline">Control Reality With Your Mind</h1>
+      <p class="hero-subheadline">The world's first consumer brain-computer interface that actually works</p>
       <p class="hero-description">
-        Revolutionary brain signal intelligence that translates neural activity 
-        into actionable insights. The future of human-computer interaction is here.
+        Join 12,847+ pioneers who refuse to accept limitations. MindWave AI doesn't just read your thoughts—it amplifies your human potential. 
+        <strong>Skip the wait. Skip the competition. Be the first to think beyond human.</strong>
       </p>
       <div class="hero-cta-container">
-        <button class="cta-primary">Learn more</button>
-        <button class="cta-secondary">Watch demo</button>
+        <button class="cta-primary">Secure Your MindWave - 40% OFF</button>
+        <button class="cta-secondary">Watch Live Demo</button>
+      </div>
+      <div class="hero-urgency">
+        <span class="urgency-text">⚡ Limited Launch Pricing Ends in 72 Hours</span>
       </div>
     </div>
     <div class="hero-visual">
