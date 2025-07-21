@@ -157,11 +157,11 @@ body::before {
 }
 
 .hero-background-video {
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 200%;
-  height: 100%;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - var(--nav-height));
   z-index: -1;
   overflow: hidden;
 }
