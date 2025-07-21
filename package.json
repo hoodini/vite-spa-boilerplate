@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "^7.0.4"
+  },
+  "dependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.45.1"
   }
 }
