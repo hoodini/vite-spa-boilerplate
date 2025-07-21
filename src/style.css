@@ -89,7 +89,7 @@ html {
 body {
   font-family: var(--font-family-primary);
   line-height: 1.6;
-  color: var(--color-white);
+  color: #ffffff;
   background: linear-gradient(135deg, 
     var(--color-space-black) 0%, 
     var(--color-space-gray) 25%, 
@@ -101,6 +101,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+}
+
+/* Ensure all text has proper contrast in dark mode */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
+p, div, span {
+  color: inherit;
 }
 
 /* Enhanced Focus Styles for Accessibility */
@@ -160,19 +169,75 @@ body {
   transform: scale(1.1);
 }
 
+/* Dark Mode Styles (Default) */
+body,
+body.dark-mode {
+  background: linear-gradient(135deg, 
+    var(--color-space-black) 0%, 
+    var(--color-space-gray) 25%, 
+    #16213e 50%, 
+    #0f3460 75%, 
+    var(--color-space-black) 100%);
+  background-attachment: fixed;
+  color: var(--color-white);
+}
+
+body.dark-mode .nav-container,
+.nav-container {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+body.dark-mode .nav-logo,
+.nav-logo {
+  color: var(--color-neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
 /* Light Mode Styles */
 body.light-mode {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #e9ecef 50%, #dee2e6 75%, #ffffff 100%);
+  background-attachment: fixed;
   color: #1a1a1a;
 }
 
 body.light-mode .nav-container {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
 }
 
 body.light-mode .nav-logo {
   color: var(--color-neon-purple);
+  text-shadow: 0 0 10px rgba(106, 0, 244, 0.3);
+}
+
+body.light-mode .nav-menu a {
+  color: rgba(26, 26, 26, 0.8);
+}
+
+body.light-mode .nav-menu a:hover {
+  color: var(--color-neon-purple);
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6 {
+  color: #1a1a1a;
+}
+
+body.light-mode p {
+  color: #4a4a4a;
+}
+
+body.light-mode .card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.8) 100%);
+  border: 1px solid rgba(106, 0, 244, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 /* High Contrast Mode */
@@ -200,8 +265,8 @@ body.high-contrast * {
 }
 
 .nav-container.scrolled {
-  background: rgba(10, 10, 10, 0.95);
-  box-shadow: 0 1px 0 rgba(0, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.98);
+  box-shadow: 0 1px 0 rgba(0, 255, 255, 0.5);
 }
 
 .nav-wrapper {
@@ -231,7 +296,7 @@ body.high-contrast * {
 
 .nav-menu a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   font-weight: 500;
   transition: var(--transition-smooth);
@@ -317,7 +382,7 @@ body.high-contrast * {
 /* Navigation Menu Items */
 .nav-menu-item {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   font-weight: 500;
   transition: var(--transition-smooth);

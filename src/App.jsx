@@ -16,21 +16,30 @@ function App() {
   const [reducedMotion, setReducedMotion] = useState(false)
 
   useEffect(() => {
-    // Check user preferences
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    // Check user preferences on initial load only
     const prefersHighContrast = window.matchMedia('(prefers-contrast: high)').matches
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     
-    setTheme(prefersDark ? 'dark' : 'light')
+    // Default to dark mode for the sci-fi theme unless explicitly set to light
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      setTheme(savedTheme)
+    }
+    // Keep dark as default since it's a sci-fi brain interface theme
+    
     setHighContrast(prefersHighContrast)
     setReducedMotion(prefersReducedMotion)
-    
-    // Apply theme to body
-    document.body.className = `${theme === 'light' ? 'light-mode' : ''} ${highContrast ? 'high-contrast' : ''}`
+  }, [])
+
+  useEffect(() => {
+    // Apply theme to body whenever theme or highContrast changes
+    document.body.className = `${theme === 'light' ? 'light-mode' : 'dark-mode'} ${highContrast ? 'high-contrast' : ''}`
   }, [theme, highContrast])
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+    localStorage.setItem('theme', newTheme)
   }
 
   const toggleHighContrast = () => {
