@@ -17,6 +17,15 @@ document.querySelector('#app').innerHTML = `
 
   <!-- Hero Section -->
   <section class="hero">
+    <div class="hero-background-video">
+      <iframe 
+        src="https://www.youtube.com/embed/--iN63lgsc4?autoplay=1&mute=1&loop=1&playlist=--iN63lgsc4&controls=0&showinfo=0&rel=0&modestbranding=1" 
+        title="Background video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
     <div class="hero-content">
       <h1 class="hero-headline">MindWave AI</h1>
       <p class="hero-subheadline">Your thoughts. Decoded.</p>
@@ -30,16 +39,18 @@ document.querySelector('#app').innerHTML = `
       </div>
     </div>
     <div class="hero-visual">
-      <div class="video-container">
-        <iframe 
-          width="560" 
-          height="315" 
-          src="https://www.youtube.com/embed/--iN63lgsc4" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-        </iframe>
+      <div class="brain-animation">
+        <div class="brain-core"></div>
+        <div class="neural-network">
+          <div class="neuron neuron-1"></div>
+          <div class="neuron neuron-2"></div>
+          <div class="neuron neuron-3"></div>
+          <div class="neuron neuron-4"></div>
+          <div class="neuron neuron-5"></div>
+          <div class="connection connection-1"></div>
+          <div class="connection connection-2"></div>
+          <div class="connection connection-3"></div>
+        </div>
       </div>
     </div>
   </section>
