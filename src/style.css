@@ -159,35 +159,21 @@ body::before {
 .hero-background-video {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: -50%;
+  width: 200%;
   height: 100%;
   z-index: -1;
   overflow: hidden;
 }
 
 .hero-background-video iframe {
-  width: 100vw;
-  height: 56.25vw; /* 16:9 aspect ratio */
-  min-height: 100vh;
-  min-width: 177.77vh; /* 16:9 aspect ratio */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.3;
-  filter: blur(2px);
-}
-
-.hero-background-video::after {
-  content: '';
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 10, 0.7);
-  z-index: 1;
+  opacity: 0.8;
+  object-fit: cover;
 }
 
 .hero-content {
@@ -211,6 +197,7 @@ body::before {
   background-clip: text;
   text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
   animation: glow 2s ease-in-out infinite alternate;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
 }
 
 .hero-subheadline {
@@ -219,7 +206,7 @@ body::before {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 24px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero-description {
@@ -227,6 +214,7 @@ body::before {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 40px;
   line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .hero-cta-container {
