@@ -1,5 +1,4 @@
 import './style.css'
-import '@lottiefiles/lottie-player'
 
 document.querySelector('#app').innerHTML = `
   <!-- Navigation -->
@@ -129,17 +128,14 @@ document.querySelector('#app').innerHTML = `
         </div>
       </div>
       <div class="tech-visual">
-        <lottie-player 
-          id="lottie-animation"
-          src="./animations/Brain.lottie" 
-          background="#1a1a2e" 
-          speed="1" 
-          style="width: 400px; height: 400px; margin: 0 auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);"
-          loop 
-          autoplay
-          mode="normal"
-          renderer="svg">
-        </lottie-player>
+        <div class="brain-animation">
+          <div class="brain-core">
+            <div class="pulse-ring pulse-ring-1"></div>
+            <div class="pulse-ring pulse-ring-2"></div>
+            <div class="pulse-ring pulse-ring-3"></div>
+            <div class="brain-icon">🧠</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -458,43 +454,11 @@ function addInteractiveEffects() {
   })
 }
 
-// Initialize Lottie animation
-function initLottieAnimation() {
-  const lottiePlayer = document.getElementById('lottie-animation')
-  if (lottiePlayer) {
-    console.log('Lottie player found, adding event listeners...')
-    
-    lottiePlayer.addEventListener('ready', () => {
-      console.log('Lottie animation is ready and playing')
-      lottiePlayer.play()
-    })
-    
-    lottiePlayer.addEventListener('load', () => {
-      console.log('Lottie animation loaded successfully')
-    })
-    
-    lottiePlayer.addEventListener('error', (e) => {
-      console.error('Lottie player error:', e)
-      console.log('Trying fallback animation...')
-      // Fallback to a simple CSS animation if Lottie fails
-      lottiePlayer.style.background = 'linear-gradient(45deg, #667eea 0%, #764ba2 100%)'
-      lottiePlayer.style.animation = 'pulse 2s ease-in-out infinite'
-    })
-    
-    // Add loading state
-    lottiePlayer.addEventListener('loading_start', () => {
-      console.log('Lottie animation loading started')
-    })
-  } else {
-    console.error('Lottie player element not found')
-  }
-}
 
 // Initialize effects when DOM is loaded
 setTimeout(() => {
   createParticleEffect()
   addInteractiveEffects()
-  initLottieAnimation()
   
   // Initialize FinisherHeader for footer background
   new FinisherHeader({

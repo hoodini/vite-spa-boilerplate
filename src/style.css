@@ -618,15 +618,75 @@ body::before {
   padding: 40px;
 }
 
-lottie-player {
+/* Brain Animation */
+.brain-animation {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   border-radius: 20px;
-  position: relative;
-  animation: float 6s ease-in-out infinite;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   border: 2px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  display: block;
-  min-width: 400px;
-  min-height: 400px;
+  animation: float 6s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.brain-core {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brain-icon {
+  font-size: 4rem;
+  z-index: 10;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.pulse-ring {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: pulsing 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+.pulse-ring-1 {
+  width: 100px;
+  height: 100px;
+  animation-delay: 0s;
+}
+
+.pulse-ring-2 {
+  width: 140px;
+  height: 140px;
+  animation-delay: 0.3s;
+}
+
+.pulse-ring-3 {
+  width: 180px;
+  height: 180px;
+  animation-delay: 0.6s;
+}
+
+@keyframes pulsing {
+  0% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
 }
 
 /* Pricing Section */

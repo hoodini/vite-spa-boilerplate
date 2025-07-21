@@ -12,8 +12,6 @@
     "vite": "^7.0.4"
   },
   "dependencies": {
-    "@lottiefiles/lottie-player": "^2.0.12",
-    "@rollup/rollup-win32-x64-msvc": "^4.45.1",
-    "lottie-web": "^5.13.0"
+    "@rollup/rollup-win32-x64-msvc": "^4.45.1"
   }
 }
