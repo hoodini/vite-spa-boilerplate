@@ -187,7 +187,6 @@ const Footer = () => {
             className="bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-500/40 rounded-lg p-6 mb-12 text-center"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             animate={{ 
               boxShadow: [
