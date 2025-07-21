@@ -183,7 +183,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   })
 })
 
-// Add scroll effects
+// Add scroll effects and parallax
 let lastScroll = 0
 const nav = document.querySelector('.nav-container')
 
@@ -195,6 +195,37 @@ window.addEventListener('scroll', () => {
   } else {
     nav.classList.remove('scrolled')
   }
+  
+  // Parallax effects
+  const heroVisual = document.querySelector('.hero-visual')
+  const techVisual = document.querySelector('.tech-visual')
+  const sections = document.querySelectorAll('section')
+  
+  // Hero parallax
+  if (heroVisual) {
+    const heroOffset = currentScroll * 0.5
+    heroVisual.style.transform = `translateY(${heroOffset}px)`
+  }
+  
+  // Technology section parallax
+  if (techVisual) {
+    const techSection = document.querySelector('.technology')
+    const techRect = techSection.getBoundingClientRect()
+    if (techRect.top < window.innerHeight && techRect.bottom > 0) {
+      const techOffset = (currentScroll - techSection.offsetTop) * 0.3
+      techVisual.style.transform = `translateY(${techOffset}px)`
+    }
+  }
+  
+  // Add floating animations to feature cards based on scroll
+  const featureCards = document.querySelectorAll('.feature-card')
+  featureCards.forEach((card, index) => {
+    const rect = card.getBoundingClientRect()
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const offset = Math.sin((currentScroll + index * 100) * 0.01) * 5
+      card.style.transform = `translateY(${offset}px)`
+    }
+  })
   
   lastScroll = currentScroll
 })
@@ -217,3 +248,63 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section, .feature-card, .pricing-card').forEach(el => {
   observer.observe(el)
 })
+
+// Enhanced brainwave animation
+function createParticleEffect() {
+  const brainwaveContainer = document.querySelector('.brainwave-visualization')
+  if (!brainwaveContainer) return
+  
+  // Create floating particles
+  for (let i = 0; i < 20; i++) {
+    const particle = document.createElement('div')
+    particle.style.position = 'absolute'
+    particle.style.width = Math.random() * 4 + 2 + 'px'
+    particle.style.height = particle.style.width
+    particle.style.background = `hsl(${180 + Math.random() * 120}, 70%, 60%)`
+    particle.style.borderRadius = '50%'
+    particle.style.left = Math.random() * 100 + '%'
+    particle.style.top = Math.random() * 100 + '%'
+    particle.style.opacity = Math.random() * 0.8 + 0.2
+    particle.style.animation = `parallax-float ${3 + Math.random() * 4}s ease-in-out infinite`
+    particle.style.animationDelay = Math.random() * 2 + 's'
+    particle.style.pointerEvents = 'none'
+    particle.style.boxShadow = `0 0 10px currentColor`
+    
+    brainwaveContainer.appendChild(particle)
+  }
+}
+
+// Add mouse interaction effects
+function addInteractiveEffects() {
+  const featureCards = document.querySelectorAll('.feature-card')
+  
+  featureCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-10px) scale(1.02)'
+      this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+    })
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)'
+    })
+    
+    card.addEventListener('mousemove', function(e) {
+      const rect = this.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      const centerX = rect.width / 2
+      const centerY = rect.height / 2
+      
+      const rotateX = (y - centerY) / 10
+      const rotateY = (centerX - x) / 10
+      
+      this.style.transform = `translateY(-10px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+    })
+  })
+}
+
+// Initialize effects when DOM is loaded
+setTimeout(() => {
+  createParticleEffect()
+  addInteractiveEffects()
+}, 1000)
