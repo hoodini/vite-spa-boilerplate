@@ -1,5 +1,5 @@
 import './style.css'
-import lottie from 'lottie-web'
+import '@lottiefiles/lottie-player'
 
 document.querySelector('#app').innerHTML = `
   <!-- Navigation -->
@@ -11,6 +11,8 @@ document.querySelector('#app').innerHTML = `
         <li><a href="#features">Features</a></li>
         <li><a href="#technology">Technology</a></li>
         <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#qa">Q&A</a></li>
+        <li><a href="#waitlist">Waitlist</a></li>
       </ul>
       <button class="nav-cta">Pre-order</button>
     </div>
@@ -124,7 +126,15 @@ document.querySelector('#app').innerHTML = `
         </div>
       </div>
       <div class="tech-visual">
-        <div class="lottie-container" id="lottie-animation"></div>
+        <lottie-player 
+          id="lottie-animation"
+          src="https://lottie.host/c611b10d-9389-4fc0-94f2-5c1f1b06a713/fqf7AUwZCK.lottie" 
+          background="transparent" 
+          speed="1" 
+          style="width: 300px; height: 300px; margin: 0 auto;"
+          loop 
+          autoplay>
+        </lottie-player>
       </div>
     </div>
   </section>
@@ -169,6 +179,121 @@ document.querySelector('#app').innerHTML = `
             <li>Lifetime warranty</li>
           </ul>
           <button class="cta-secondary">Contact us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q&A Section -->
+  <section class="qa-section" id="qa">
+    <div class="container">
+      <h2 class="section-headline">Frequently Asked Questions</h2>
+      <div class="qa-grid">
+        <div class="qa-item">
+          <div class="qa-question">
+            <h3>How does MindWave AI actually read brain signals?</h3>
+            <span class="qa-toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <p>MindWave AI uses advanced quantum sensors to detect electrical activity in your brain. Our proprietary algorithms then decode these neural patterns into meaningful insights using machine learning models trained on millions of brain scans.</p>
+          </div>
+        </div>
+        
+        <div class="qa-item">
+          <div class="qa-question">
+            <h3>Is my brain data private and secure?</h3>
+            <span class="qa-toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <p>Absolutely. All neural data is encrypted end-to-end and processed locally on your device. We never store or transmit your raw brain signals to our servers. Your thoughts remain completely private.</p>
+          </div>
+        </div>
+        
+        <div class="qa-item">
+          <div class="qa-question">
+            <h3>How long does the battery last?</h3>
+            <span class="qa-toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <p>MindWave AI provides 24 hours of continuous monitoring on a single charge. The wireless charging case extends this to 7 days of usage with quick 15-minute top-ups throughout the day.</p>
+          </div>
+        </div>
+        
+        <div class="qa-item">
+          <div class="qa-question">
+            <h3>What can I do with the insights?</h3>
+            <span class="qa-toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <p>Track your cognitive performance, optimize your sleep patterns, enhance focus during work, monitor stress levels, and even control smart home devices with your thoughts. The possibilities expand with regular software updates.</p>
+          </div>
+        </div>
+        
+        <div class="qa-item">
+          <div class="qa-question">
+            <h3>When will MindWave AI be available?</h3>
+            <span class="qa-toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <p>We're currently in final testing phases. Pre-orders begin shipping in Q2 2025. Join our waitlist to be among the first to experience the future of brain-computer interfaces.</p>
+          </div>
+        </div>
+        
+        <div class="qa-item">
+          <div class="qa-question">
+            <h3>Do I need any special training to use it?</h3>
+            <span class="qa-toggle">+</span>
+          </div>
+          <div class="qa-answer">
+            <p>No training required! MindWave AI learns your unique neural patterns automatically during the first week of use. The intuitive mobile app guides you through the setup process and provides personalized recommendations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist Subscription -->
+  <section class="waitlist-section" id="waitlist">
+    <div class="container">
+      <div class="waitlist-content">
+        <h2 class="section-headline">Join the Future</h2>
+        <p class="section-subheadline">Be among the first to experience revolutionary brain-computer interaction</p>
+        
+        <div class="waitlist-form-container">
+          <form class="waitlist-form" id="waitlistForm">
+            <div class="form-group">
+              <input 
+                type="email" 
+                id="emailInput" 
+                placeholder="Enter your email address" 
+                required 
+                class="email-input"
+              >
+              <button type="submit" class="submit-btn">Join Waitlist</button>
+            </div>
+            <p class="form-disclaimer">We'll notify you when MindWave AI is available for pre-order. No spam, ever.</p>
+          </form>
+          
+          <div class="success-message" id="successMessage" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h3>Welcome to the future!</h3>
+            <p>You've successfully joined our waitlist. We'll be in touch when MindWave AI is ready for pre-order.</p>
+          </div>
+        </div>
+        
+        <div class="waitlist-stats">
+          <div class="stat">
+            <span class="stat-number" id="waitlistCount">12,847</span>
+            <span class="stat-label">People waiting</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">99.9%</span>
+            <span class="stat-label">Accuracy rate</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">Q2 2025</span>
+            <span class="stat-label">Expected launch</span>
+          </div>
         </div>
       </div>
     </div>
@@ -316,15 +441,19 @@ function addInteractiveEffects() {
 
 // Initialize Lottie animation
 function initLottieAnimation() {
-  const container = document.getElementById('lottie-animation')
-  if (container) {
-    lottie.loadAnimation({
-      container: container,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'https://lottie.host/c611b10d-9389-4fc0-94f2-5c1f1b06a713/fqf7AUwZCK.lottie'
+  const lottiePlayer = document.getElementById('lottie-animation')
+  if (lottiePlayer) {
+    console.log('Lottie player found, adding event listeners...')
+    
+    lottiePlayer.addEventListener('ready', () => {
+      console.log('Lottie animation is ready and playing')
     })
+    
+    lottiePlayer.addEventListener('error', (e) => {
+      console.error('Lottie player error:', e)
+    })
+  } else {
+    console.error('Lottie player element not found')
   }
 }
 
@@ -373,3 +502,119 @@ setTimeout(() => {
     ]
   })
 }, 1000)
+
+// Q&A Toggle functionality
+function initQAToggles() {
+  const qaItems = document.querySelectorAll('.qa-item')
+  
+  qaItems.forEach(item => {
+    const question = item.querySelector('.qa-question')
+    const answer = item.querySelector('.qa-answer')
+    const toggle = item.querySelector('.qa-toggle')
+    
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open')
+      
+      // Close all other Q&A items
+      qaItems.forEach(otherItem => {
+        otherItem.classList.remove('open')
+        otherItem.querySelector('.qa-toggle').textContent = '+'
+      })
+      
+      // Toggle current item
+      if (!isOpen) {
+        item.classList.add('open')
+        toggle.textContent = '−'
+      }
+    })
+  })
+}
+
+// Waitlist form submission with mock data
+function initWaitlistForm() {
+  const form = document.getElementById('waitlistForm')
+  const emailInput = document.getElementById('emailInput')
+  const successMessage = document.getElementById('successMessage')
+  const waitlistCount = document.getElementById('waitlistCount')
+  
+  // Mock data storage
+  let mockWaitlistEmails = JSON.parse(localStorage.getItem('waitlistEmails') || '[]')
+  let currentCount = parseInt(localStorage.getItem('waitlistCount') || '12847')
+  
+  // Update displayed count
+  waitlistCount.textContent = currentCount.toLocaleString()
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    
+    const email = emailInput.value.trim()
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      emailInput.style.borderColor = '#ff4444'
+      emailInput.focus()
+      return
+    }
+    
+    // Check if email already exists in mock data
+    if (mockWaitlistEmails.includes(email)) {
+      emailInput.style.borderColor = '#ff4444'
+      emailInput.placeholder = 'Email already registered!'
+      emailInput.value = ''
+      setTimeout(() => {
+        emailInput.placeholder = 'Enter your email address'
+        emailInput.style.borderColor = ''
+      }, 3000)
+      return
+    }
+    
+    // Simulate API call delay
+    const submitBtn = form.querySelector('.submit-btn')
+    const originalText = submitBtn.textContent
+    submitBtn.textContent = 'Joining...'
+    submitBtn.disabled = true
+    
+    setTimeout(() => {
+      // Add email to mock storage
+      mockWaitlistEmails.push(email)
+      currentCount++
+      
+      // Update localStorage
+      localStorage.setItem('waitlistEmails', JSON.stringify(mockWaitlistEmails))
+      localStorage.setItem('waitlistCount', currentCount.toString())
+      
+      // Update UI
+      waitlistCount.textContent = currentCount.toLocaleString()
+      
+      // Show success message
+      form.style.display = 'none'
+      successMessage.style.display = 'block'
+      
+      // Add celebration animation
+      successMessage.classList.add('animate-in')
+      
+      // Reset form after 5 seconds
+      setTimeout(() => {
+        form.style.display = 'block'
+        successMessage.style.display = 'none'
+        successMessage.classList.remove('animate-in')
+        emailInput.value = ''
+        submitBtn.textContent = originalText
+        submitBtn.disabled = false
+      }, 5000)
+      
+    }, 1500) // Simulate network delay
+  })
+  
+  // Reset border color on input
+  emailInput.addEventListener('input', () => {
+    emailInput.style.borderColor = ''
+  })
+}
+
+// Initialize new functionality
+setTimeout(() => {
+  initQAToggles()
+  initWaitlistForm()
+}, 1100)
