@@ -14,7 +14,7 @@ document.querySelector('#app').innerHTML = `
         <li><a href="#qa">Q&A</a></li>
         <li><a href="#waitlist">Waitlist</a></li>
       </ul>
-      <button class="nav-cta">Pre-order</button>
+      <button class="nav-cta">🔥 40% OFF - 72hrs Left</button>
     </div>
   </nav>
 
@@ -65,40 +65,40 @@ document.querySelector('#app').innerHTML = `
   <!-- Features Grid -->
   <section class="features" id="features">
     <div class="container">
-      <h2 class="section-headline">Breakthrough capabilities</h2>
-      <p class="section-subheadline">Advanced neural decoding meets intuitive design</p>
+      <h2 class="section-headline">Why Genius Minds Choose MindWave</h2>
+      <p class="section-subheadline">The technology that separates leaders from followers</p>
       
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">
             <div class="icon-pulse"></div>
           </div>
-          <h3>Real-time Analysis</h3>
-          <p>Process brain signals with millisecond precision for instant insights</p>
+          <h3>Instant Cognitive Enhancement</h3>
+          <p>React faster than humanly possible. Your thoughts travel at light speed while others think in slow motion.</p>
         </div>
         
         <div class="feature-card">
           <div class="feature-icon">
             <div class="icon-brain"></div>
           </div>
-          <h3>Neural Mapping</h3>
-          <p>Advanced AI algorithms decode complex neural patterns with 99.9% accuracy</p>
+          <h3>Superhuman Intelligence</h3>
+          <p>Access 10x your mental capacity. What used to take hours now happens in minutes. Your competition won't know what hit them.</p>
         </div>
         
         <div class="feature-card">
           <div class="feature-icon">
             <div class="icon-shield"></div>
           </div>
-          <h3>Privacy First</h3>
-          <p>Your thoughts stay yours. End-to-end encryption protects your neural data</p>
+          <h3>Military-Grade Security</h3>
+          <p>Your mental edge stays protected. Zero-knowledge encryption ensures your competitive advantage never leaks.</p>
         </div>
         
         <div class="feature-card">
           <div class="feature-icon">
             <div class="icon-battery"></div>
           </div>
-          <h3>All-day Battery</h3>
-          <p>24-hour continuous monitoring with wireless charging case</p>
+          <h3>Never Offline</h3>
+          <p>24/7 mental amplification. While others sleep, you evolve. Continuous optimization means you wake up smarter every day.</p>
         </div>
       </div>
     </div>
@@ -108,11 +108,10 @@ document.querySelector('#app').innerHTML = `
   <section class="technology" id="technology">
     <div class="tech-content">
       <div class="tech-text">
-        <h2>Pioneering Neural Interface</h2>
+        <h2>The Technology That Changes Everything</h2>
         <p class="tech-description">
-          Our proprietary quantum sensor array captures brain signals with unprecedented 
-          clarity. Machine learning models trained on millions of neural patterns deliver 
-          personalized insights that adapt to your unique brain signature.
+          While others dream of the future, we built it. Our quantum neural architecture doesn't just read your mind—it <strong>upgrades it</strong>. 
+          This isn't wearable tech. This is human evolution. <em>The question isn't whether you can afford it. It's whether you can afford to be left behind.</em>
         </p>
         <div class="tech-specs">
           <div class="spec">
@@ -146,43 +145,54 @@ document.querySelector('#app').innerHTML = `
   <!-- Pricing -->
   <section class="pricing" id="pricing">
     <div class="container">
-      <h2 class="section-headline">Choose your MindWave</h2>
+      <h2 class="section-headline">Join The Neural Elite (Limited Time)</h2>
+      <div class="pricing-urgency">
+        <span class="urgency-badge">🔥 40% OFF Launch Pricing - Only 247 Units Left</span>
+      </div>
       <div class="pricing-cards">
         <div class="pricing-card">
           <h3>MindWave Essential</h3>
+          <p class="price-old">$1,665</p>
           <p class="price">$999</p>
           <ul class="features-list">
-            <li>Basic neural monitoring</li>
-            <li>Sleep & focus tracking</li>
-            <li>Mobile app included</li>
-            <li>1-year warranty</li>
+            <li>✅ 3x Faster Decision Making</li>
+            <li>✅ Enhanced Focus & Flow States</li>
+            <li>✅ Sleep Optimization AI</li>
+            <li>✅ 365-Day Guarantee</li>
           </ul>
-          <button class="cta-secondary">Pre-order</button>
+          <button class="cta-secondary">Secure Essential - $999</button>
         </div>
         
         <div class="pricing-card featured">
-          <div class="badge">Most Popular</div>
+          <div class="badge">🏆 Genius Choice</div>
           <h3>MindWave Pro</h3>
+          <p class="price-old">$2,498</p>
           <p class="price">$1,499</p>
+          <div class="savings-badge">SAVE $999</div>
           <ul class="features-list">
-            <li>Advanced neural decoding</li>
-            <li>Emotion & cognitive analysis</li>
-            <li>API access for developers</li>
-            <li>2-year warranty</li>
+            <li>✅ Everything in Essential PLUS:</li>
+            <li>⚡ 10x Cognitive Amplification</li>
+            <li>🧠 Emotion Mastery System</li>
+            <li>🔮 Predictive Intelligence</li>
+            <li>🛡️ Lifetime Updates & Support</li>
           </ul>
-          <button class="cta-primary">Pre-order</button>
+          <button class="cta-primary">Claim Pro - $1,499</button>
         </div>
         
-        <div class="pricing-card">
+        <div class="pricing-card ultra">
+          <div class="ultra-badge">👑 For Visionaries</div>
           <h3>MindWave Ultra</h3>
+          <p class="price-old">$4,165</p>
           <p class="price">$2,499</p>
+          <div class="exclusive-badge">EXCLUSIVE ACCESS</div>
           <ul class="features-list">
-            <li>Research-grade sensors</li>
-            <li>Custom AI training</li>
-            <li>Enterprise features</li>
-            <li>Lifetime warranty</li>
+            <li>✅ Everything in Pro PLUS:</li>
+            <li>🚀 Scientific-Grade Neural Interface</li>
+            <li>🔬 Custom AI Personality Training</li>
+            <li>💼 Enterprise Command Center</li>
+            <li>♾️ Lifetime Everything Guarantee</li>
           </ul>
-          <button class="cta-secondary">Contact us</button>
+          <button class="cta-secondary">Reserve Ultra - $2,499</button>
         </div>
       </div>
     </div>
@@ -260,8 +270,8 @@ document.querySelector('#app').innerHTML = `
   <section class="waitlist-section" id="waitlist">
     <div class="container">
       <div class="waitlist-content">
-        <h2 class="section-headline">Join the Future</h2>
-        <p class="section-subheadline">Be among the first to experience revolutionary brain-computer interaction</p>
+        <h2 class="section-headline">The Neural Revolution Starts Now</h2>
+        <p class="section-subheadline">Don't watch from the sidelines. Lead the transformation. <strong>Limited spots available.</strong></p>
         
         <div class="waitlist-form-container">
           <form class="waitlist-form" id="waitlistForm">
@@ -273,15 +283,15 @@ document.querySelector('#app').innerHTML = `
                 required 
                 class="email-input"
               >
-              <button type="submit" class="submit-btn">Join Waitlist</button>
+              <button type="submit" class="submit-btn">🚀 Secure My Spot - FREE</button>
             </div>
-            <p class="form-disclaimer">We'll notify you when MindWave AI is available for pre-order. No spam, ever.</p>
+            <p class="form-disclaimer">⚡ Get exclusive 40% launch discount + first access to limited units. No spam, just neural evolution.</p>
           </form>
           
           <div class="success-message" id="successMessage" style="display: none;">
             <div class="success-icon">✓</div>
-            <h3>Welcome to the future!</h3>
-            <p>You've successfully joined our waitlist. We'll be in touch when MindWave AI is ready for pre-order.</p>
+            <h3>You're officially part of the neural elite!</h3>
+            <p>Check your email for exclusive launch access and your 40% discount code. The future thinks you made the right choice.</p>
           </div>
         </div>
         
@@ -307,7 +317,10 @@ document.querySelector('#app').innerHTML = `
   <footer class="footer finisher-header" style="width: 100%; height: 300px; position: relative;">
     <div class="footer-content">
       <p>&copy; 2024 MindWave AI. All rights reserved.</p>
-      <p class="footer-tagline">Think different. Think MindWave.</p>
+      <p class="footer-tagline">Don't just think different. <strong>Think impossible.</strong></p>
+      <div class="footer-urgency">
+        <span class="footer-cta">⏰ Launch pricing expires in 72 hours. Your mind can't wait.</span>
+      </div>
     </div>
   </footer>
 `
