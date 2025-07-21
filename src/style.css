@@ -609,12 +609,24 @@ body::before {
 
 .tech-visual {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  background: linear-gradient(135deg, rgba(16, 16, 40, 0.1) 0%, rgba(26, 26, 46, 0.2) 100%);
+  border-radius: 20px;
+  padding: 40px;
 }
 
 lottie-player {
-  border-radius: 30px;
+  border-radius: 20px;
   position: relative;
   animation: float 6s ease-in-out infinite;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  display: block;
+  min-width: 400px;
+  min-height: 400px;
 }
 
 /* Pricing Section */

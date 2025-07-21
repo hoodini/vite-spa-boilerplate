@@ -131,12 +131,14 @@ document.querySelector('#app').innerHTML = `
       <div class="tech-visual">
         <lottie-player 
           id="lottie-animation"
-          src="https://lottie.host/c611b10d-9389-4fc0-94f2-5c1f1b06a713/fqf7AUwZCK.lottie" 
-          background="transparent" 
+          src="./animations/Brain.lottie" 
+          background="#1a1a2e" 
           speed="1" 
-          style="width: 300px; height: 300px; margin: 0 auto;"
+          style="width: 400px; height: 400px; margin: 0 auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);"
           loop 
-          autoplay>
+          autoplay
+          mode="normal"
+          renderer="svg">
         </lottie-player>
       </div>
     </div>
@@ -464,10 +466,24 @@ function initLottieAnimation() {
     
     lottiePlayer.addEventListener('ready', () => {
       console.log('Lottie animation is ready and playing')
+      lottiePlayer.play()
+    })
+    
+    lottiePlayer.addEventListener('load', () => {
+      console.log('Lottie animation loaded successfully')
     })
     
     lottiePlayer.addEventListener('error', (e) => {
       console.error('Lottie player error:', e)
+      console.log('Trying fallback animation...')
+      // Fallback to a simple CSS animation if Lottie fails
+      lottiePlayer.style.background = 'linear-gradient(45deg, #667eea 0%, #764ba2 100%)'
+      lottiePlayer.style.animation = 'pulse 2s ease-in-out infinite'
+    })
+    
+    // Add loading state
+    lottiePlayer.addEventListener('loading_start', () => {
+      console.log('Lottie animation loading started')
     })
   } else {
     console.error('Lottie player element not found')
