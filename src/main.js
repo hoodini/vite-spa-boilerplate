@@ -30,14 +30,16 @@ document.querySelector('#app').innerHTML = `
       </div>
     </div>
     <div class="hero-visual">
-      <div class="device-mockup">
-        <div class="device-screen">
-          <div class="brainwave-visualization">
-            <div class="wave wave-1"></div>
-            <div class="wave wave-2"></div>
-            <div class="wave wave-3"></div>
-          </div>
-        </div>
+      <div class="video-container">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/--iN63lgsc4" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   </section>
@@ -164,7 +166,7 @@ document.querySelector('#app').innerHTML = `
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer finisher-header" style="width: 100%; height: 300px; position: relative;">
     <div class="footer-content">
       <p>&copy; 2024 MindWave AI. All rights reserved.</p>
       <p class="footer-tagline">Think different. Think MindWave.</p>
@@ -307,4 +309,43 @@ function addInteractiveEffects() {
 setTimeout(() => {
   createParticleEffect()
   addInteractiveEffects()
+  
+  // Initialize FinisherHeader for footer background
+  new FinisherHeader({
+    "count": 5,
+    "size": {
+      "min": 717,
+      "max": 1037,
+      "pulse": 0.5
+    },
+    "speed": {
+      "x": {
+        "min": 0.1,
+        "max": 0.9
+      },
+      "y": {
+        "min": 0.1,
+        "max": 0.5
+      }
+    },
+    "colors": {
+      "background": "#9138e5",
+      "particles": [
+        "#6bd6ff",
+        "#ffcb57",
+        "#ff333d"
+      ]
+    },
+    "blending": "none",
+    "opacity": {
+      "center": 1,
+      "edge": 0.1
+    },
+    "skew": -2,
+    "shapes": [
+      "s",
+      "t",
+      "c"
+    ]
+  })
 }, 1000)
